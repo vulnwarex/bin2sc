@@ -67,7 +67,7 @@ if __name__ == '__main__':
 		pass # Windows
 	elif os.name == 'posix':
 		subprocess.call(['/usr/bin/nasm', '-f', 'elf32', sys.argv[1]])
-		subprocess.call(['ld', '-m', 'elf_i386', '-o' , 'shellcode', os.path.splitext(sys.argv[1])[0]+'.o'])
+		subprocess.call(['/usr/bin/ld', '-m', 'elf_i386', '-o' , 'shellcode', os.path.splitext(sys.argv[1])[0]+'.o'])
 		if sys.argv[2] == "sc_app" and sys.argv[3] == "linux":
 			opcode = sc_bin('shellcode', 'intel')
 			shellcode = re.sub("(.{32})", "\\1\n",opcode, 0, re.DOTALL)
