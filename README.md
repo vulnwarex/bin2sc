@@ -9,8 +9,8 @@ python3 bin2sc.py
 ```
 
 ## Example Usage:
-```python
-python3 bin2sc.py shellcode.asm {sc_arr,sc_app} {linux,win}
+```python;
+python3 bin2sc.py shellcode.asm {sc_arr,sc_app} {linux,win} {x86,x64}
 ```
 
 ```asm
