@@ -15,7 +15,7 @@ python3 bin2sc.py
 
 ## Example Usage:
 ```python;
-python3 bin2sc.py shellcode.asm {sc_arr,sc_app} {linux,win} {x86,x64} /full/path/to/WinApi32/lib
+python3 bin2sc.py shellcode.asm {sc_arr,sc_app} {linux,win} {x86,x64} /full/path/to/WinApi32/kernel32.Lib
 ```
 
 ```asm
