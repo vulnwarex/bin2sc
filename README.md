@@ -1,6 +1,11 @@
 # bin2sc
 Binary to shellcode
 
+Note:
+The core DLLs of Win32 are `kernel32.dll, user32.dll, and gdi32.dll`. if your shellcode uses syscalls from any of the core DLLs, you will need to add it. 
+
+Win32 libs are located in `C:\\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\`, in my case is `10.0.18362.0` version, but in your host machine could change.
+
 ## Install
 ```
 git clone https://github.com/SkyBulk/bin2sc.git
@@ -10,7 +15,7 @@ python3 bin2sc.py
 
 ## Example Usage:
 ```python;
-python3 bin2sc.py shellcode.asm {sc_arr,sc_app} {linux,win} {x86,x64}
+python3 bin2sc.py shellcode.asm {sc_arr,sc_app} {linux,win} {x86,x64} /full/path/to/WinApi32/lib
 ```
 
 ```asm
