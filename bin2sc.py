@@ -124,6 +124,6 @@ if __name__ == '__main__':
 		for sublist in opcode:
 			shellcode = sublist
 		print("\n[+] linear shellcode\n")
-		print('shellcode = {}'.format(str(shellcode).replace("'", '')))
+		print('shellcode = {}'.format(str(shellcode).replace("'", '').replace('u','')))
 	else:
 		print("not shellcode format found")
