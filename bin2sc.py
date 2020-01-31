@@ -22,7 +22,7 @@ def sc_bin(obj, syntax):
 	lines = subprocess.check_output(['objdump', '-d', '-M', syntax, obj])
 	lines = lines.split(b'Disassembly of section')[1]
 	lines = lines.split(b'\n')[3:]
-	shellcode = ""
+	shellcode = ''
 	opcode = []
 	code = []
 	for l in lines:
@@ -102,8 +102,15 @@ if __name__ == '__main__':
 			opcode = sc_bin('shellcode.exe', 'intel')
 		else:
 			pass
-		shellcode = re.sub("(.{32})", "\\1\n",opcode, 0, re.DOTALL)
+		sc_header = 'shellcode = ""'
+		shellcode = 'shellcode += "'
+		for i in range(len(opcode)):
+		    if i % 40 == 0 and i > 0:
+		        shellcode += '"\nshellcode += "'
+		    shellcode += opcode[i]
+		shellcode += '"'
 		print("[+] block Shellcode")
+		print(sc_header)
 		print(shellcode)
 		print("\n[+] linear shellcode\n")
 		print(opcode)
