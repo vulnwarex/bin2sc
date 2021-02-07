@@ -4,7 +4,7 @@ import os
 import re
 # -*- coding: utf-8 -*-
 #
-# Copyright 2019 skybulk LLC
+# Copyright 2019 Vulnwarex LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
